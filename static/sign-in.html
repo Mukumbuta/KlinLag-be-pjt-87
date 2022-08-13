@@ -1,0 +1,57 @@
+{% extends 'baseauth.html' %}
+{% load widget_tweaks %}
+{% block title %}
+<title>Sign In</title>
+    <link rel="stylesheet" href="styles/sign-in.css">
+    <link rel="stylesheet" href="styles/companysignup.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        
+         <div class="test">
+            <img src= "assets/sign-in%20img.png">
+           </div>
+       <div class="box2">
+           <h1 class="welcome"> Welcome Back</h1>
+       <form class="form" method="post">
+           {% csrf_token %}
+       <div class="sign-in">
+       <label for="email" class="form-label">Email</label><br>
+{#        <input type="text" >#}
+
+          {% render_field login_form.username type="text" %}
+           <br>
+           {% csrf_token %}
+        <div class="fontpassword">
+         <label for="password" class="form-label">Password</label><br>
+{#        <input type="text" class="fontpassword" >#}
+            {% render_field login_form.password type="text" class="fontpassword" %}
+        <i class="fa fa-eye fa-lg"></i>
+    </div>
+       </div>
+       <div class="sign-in"></div>
+       
+       <button class="sign">SIGN IN</button>
+       <span> or </span>
+       <button class="google">
+       <span class="blue">G</span>
+       <span class="red">O</span>
+       <span class="yellow">O</span>
+       <span class="blue">G</span>
+       <span class="green">L</span>
+       <span class="red">E</span>
+       </button>
+       <button class="facebook"> FACEBOOK</button>
+
+       
+       </form>
+           <div class="sign-in col"><span> Don't have an account ?</span> <a href="{% url 'main_app:landing' %}"><button class="sign-btn"> SIGN UP</button></a>
+
+           </div>
+         </div>
+         </div>
+
+<span> Forgot Password ?</span> <a href="{% url 'password_reset' %}"><span class="reset"> Reset Password ?</span> </a>
+         <!-- FOOTER -->
+{% endblock %}

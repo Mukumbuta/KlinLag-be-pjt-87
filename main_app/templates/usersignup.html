@@ -1,0 +1,111 @@
+{% extends 'baseauth.html' %}
+{% load widget_tweaks %}
+
+    {% block title %}
+  <link rel="stylesheet" href="../../static/styles/usersignup.css">
+  <title>Klin Lag | Sign Up - User</title>
+    {% endblock %}
+
+  {% block body %}
+  
+  <section class="sign-up py-7">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-12 pl-10">
+          <h1 class="heading-primary pt-7">Getting Started</h1>
+          <form class="row sign-up__form mb-3"  method="post" novalidate>
+              {% csrf_token %}
+            <div class="col-md-6 mb-3">
+              <label for="firstname" class="form-label">First Name</label>
+                {{ signup_user_form.first_name.errors }}
+{#              <input type="text" class="form-control shadow-none" id="firstname">#}
+                {% render_field signup_user_form.first_name  type="text" class="form-control shadow-none" id="firstname"%}
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="lastname" class="form-label">Last Name</label>
+                {{ signup_user_form.last_name.errors }}
+{#              <input type="text" class="form-control shadow-none" id="lastname">#}
+                {% render_field signup_user_form.last_name  type="text" class="form-control shadow-none" id="lastname"%}
+            </div>
+
+            <div class="col-md-12 mb-3">
+              <label for="Phone" class="form-label">Phone</label>
+                {{ signup_user_form.phone.errors }}
+{#              <input type="text" class="form-control shadow-none" id="Phone">#}
+                {% render_field signup_user_form.phone  type="text" class="form-control shadow-none" id="Phone"%}
+            </div>
+
+            <div class="col-md-12 mb-3">
+              <label for="user-email" class="form-label">Email</label>
+                {{ signup_user_form.email.errors }}
+{#              <input type="email" class="form-control shadow-none" id="user-email">#}
+                {% render_field signup_user_form.email type="email" class="form-control shadow-none" id="user-email" %}
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6 col-xs-12">
+                <label for="password" class="form-label">Password</label>
+                  {{ signup_user_form.password1.errors }}
+                <div class="input-group">
+{#                  <input type="password" id="password" class="form-control shadow-none" aria-label="Password">#}
+                    {% render_field signup_user_form.password1  type="password" id="password" class="form-control shadow-none" aria-label="Password"%}
+                  <span class="input-group-text"><img src="../../static/assets/eye.svg" alt="hide"></span>
+                </div>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <label for="confirm" class="form-label">Confirm Password</label>
+                  {{ signup_user_form.password2.errors }}
+                <div class="input-group">
+{#                  <input type="password" id="confirm" class="form-control shadow-none" aria-label="Confirm Password">#}
+                    {% render_field signup_user_form.password2  type="password" id="confirm" class="form-control shadow-none" aria-label="Confirm Password"%}
+                  <span class="input-group-text"><img src="../../static/assets/eye.svg" alt="hide"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-12">
+                  {{ signup_user_form.confirmation.errors}}
+                <div class="form-check d-flex align-items-center">
+{#                  <input class="form-check-input" type="checkbox" id="gridCheck">#}
+                    {% render_field signup_user_form.confirmation class="form-check-input" type="checkbox" id="gridCheck" %}
+                  <label class="form-check-label" for="agreement">
+                    I agree to KLIN LAG’s <span class="text-primary">Terms &amp; Condition</span> and <span class="text-primary">Privacy Policy</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="auth-group d-flex justify-content-between align-items-center">
+                  <button type="submit" class="btn btn-primary btn-lg px-5">Sign Up</button>
+{#                  <p class="heading-tertiary">OR</p>#}
+{#                  <div class="social-signup">#}
+{#                    <button type="button" class="btn btn-google btn-lg me-4">Google</button>#}
+{#                    <button type="button" class="btn btn-facebook btn-lg">Facebook</button>#}
+{#                  </div>#}
+                </div>
+              </div>
+            
+            </div>
+          </form>
+        </div> <!-- end col-7 -->
+
+        <div class="col-lg-5 col-md-5 col-sm-12 sign-up--image-right">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 d-flex align-items-center justify-content-around push-down">
+              <h4 class="heading-tertiary">Already have an account?</h4>
+              <a href="{% url 'main_app:index' %}"><button type="button" class="btn btn-alt btn-lg px-5">Sign In</button></a>
+            </div>
+          </div>
+        </div> <!-- end col-5 -->
+      </div>
+    </div>
+  </section>
+
+
+  
+  <!-- footer  -->
+{% endblock %}

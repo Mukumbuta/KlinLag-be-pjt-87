@@ -1,0 +1,94 @@
+.signup-modal, .signin-modal{
+display: none;
+position: absolute;
+width: 1440px;
+height: 858px;
+left: 0px;
+top: 2px;
+background: rgba(67, 95, 74, 0.35)
+}
+
+.signup-content, .signin-content{
+    position: absolute;
+    width: 521px;
+    height: 327px;
+    left: 359px;
+    top: 194px;
+}
+
+.signup-content h3, .signin-content h3 {
+margin-top: 1.6rem;
+font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 140%;
+/* identical to box height, or 28px */
+color: #000000;
+}
+
+.btn-close{
+    margin-left: 70vh;
+    font-weight:600;
+    padding: 20px;
+}
+
+@media screen and (max-width:980px) {
+
+    .signup-modal, .signin-modal{
+        height: 1000vh;
+        width: 800px;
+    }
+
+    .signup-content, .signin-content {
+        width: 540px;
+        height: 300px;
+        left: 75px;
+        top: 144px;
+    }
+
+    .signup-content h3, .signin-content h3{
+        margin-top: 0.2rem;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 70%;
+    }
+
+    .signup-content a, .signin-content a{
+        font-size: 10px;
+    }
+    .btn-close{
+        margin-left: 45vh;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .signup-modal, .signin-modal{
+        height: 1000vh;
+        width: 400px;
+    }
+
+    .signup-content, .signin-content {
+        width: 390px;
+        height: 250px;
+        left: 15px;
+        top: 194px;
+    }
+
+    .signup-content h3, .signin-content h3{
+        margin-top: 0.2rem;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 70%;
+    }
+
+    .signup-content a, .signin-content a{
+        font-size: 10px;
+    }
+    .btn-close{
+        margin-left: 48vh;
+    }
+
+    
+}

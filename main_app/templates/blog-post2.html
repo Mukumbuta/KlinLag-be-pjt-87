@@ -1,0 +1,114 @@
+{% extends 'baseauth.html' %}
+{% block title %}
+
+    <link rel="stylesheet" href="../../static/styles/companysignup.css">
+    <link rel="stylesheet" href="../../static/styles/blogpost.css">
+  <title> Blog | Klin lag</title>
+{% endblock %}
+
+{% block body %}
+  <section class="showcase">
+      <div class="container">
+        <div class="showcase-content text-light">
+          <h1>Benefits of Proper Waste Sorting</h1>
+          <p>This will help solve the problem of flooding because these are most of the things clogging our gutters and water ways.</p>
+          <a href="#" class=" btn green-btn">READ POST</a>
+        </div>
+      </div>
+  </section>
+  <section class="container">
+      <h4 class="text-green py-2">RECOMMENDED FOR YOU</h4>
+      <div id="posts">
+        <div class="posts">
+            {% for posts in blogpost_list %}
+            <div class="post">
+              <img src="{{ posts.image.url }}" alt="image">
+              <a href="{% url 'main_app:post_detail' posts.pk %}"><h3  class="text-green py-1">{{ posts.title }}</h3></a>
+              <p class="fs-5">{{ posts.body|truncatewords:10}}</p>
+              <span class="fs-6 py-2">
+                <p>{{ posts.created}} | 5min Read</p>
+                <p>By {{ posts.author }}</p>
+              </span>
+            </div>
+            {% endfor %}
+
+            <div class="post py-2">
+              <img src="../../static/assets/Rectangle%204%20(2).png" alt="image">
+              <h3 class="text-green py-1">Africa's solid waste is growing.</h3>
+              <p class="fs-5">This will help solve the problem of flooding because these are most of</p>
+              <span class="fs-6 py-2">
+                <p>Jan 20, 2021 | 5min Read</p>
+                <p>By Vivian</p>
+              </span>
+            </div>
+            <div class="post py-2">
+              <img src="../../static/assets/Rectangle%204%20(3).png" alt="image">
+              <h3 class="text-green py-1">Waste disposal - Different methods.</h3>
+              <p class="fs-5">This will help solve the problem of flooding because these are most of</p>
+              <span class="fs-6 py-2">
+                <p>Jan 20, 2021 | 5min Read</p>
+                <p>By Vivian</p>
+              </span>
+            </div>
+        </div>
+        <div class="aside">
+            {% for post in blogpost_list %}
+          <div>
+            <li class="py-1"><a href="#" class="text-green">{{ post.title }}</a></li>
+            <p class="fs-6 underline">{{ post.created }} | 5min Read</p>
+          </div>
+            {% endfor %}
+
+
+          <div class="related-topics">
+            <h3 class="text-green py-1">RELATED TOPICS</h3>
+            <a href="#" class="btn green-fade">Waste</a>
+            <a href="#" class="btn green-fade">Recycling</a>
+            <a href="#" class="btn green-fade">Sustainable waste</a>
+            <a href="#" class="btn green-fade">Lagos</a>
+            <a href="#" class="btn green-fade">Effects</a>
+            <a href="#" class="btn green-fade">Recycling</a>
+            <a href="#" class="btn green-fade">Lagos</a>
+            <a href="#" class="btn green-fade">Waste</a>
+            <a href="#" class="btn green-fade">WHO</a>
+          </div>
+        </div>
+      </div>
+  </section>
+  <section class="container">
+    <div class="others">
+      <div class="article">
+          <img src="../../static/assets/Rectangle%205.png" alt="image">
+          <h3 class="text-green py-1 fs-4">Waste to Resources.</h3>
+          <p class="fs-6">This will help solve the problem of flooding</p>
+          <span class="fs-6 text-green py-2">
+            <p class="py-1">5min Read</p>
+          </span>
+      </div>
+      <div class="article">
+          <img src="../../static/assets/Rectangle%205%20(1).png" alt="image">
+          <h3 class="text-green py-1 fs-4">Waste to Resources.</h3>
+          <p class="fs-6">This will help solve the problem of flooding</p>
+          <span class="fs-6 text-green py-2">
+            <p class="py-1">5min Read</p>
+          </span>
+      </div>
+      <div class="article">
+          <img src="../../static/assets/Rectangle%205%20(2).png" alt="image">
+          <h3 class="text-green py-1 fs-4">Waste Hierarchy.</h3>
+          <p class="fs-6">This will help solve the problem of flooding</p>
+          <span class="fs-6 text-green py-2">
+            <p class="py-1">5min Read</p>
+          </span>
+      </div>
+      <div class="article">
+          <img src="../../static/assets/Rectangle%205%20(3).png" alt="image">
+          <h3 class="text-green py-1 fs-4">Waste to Hierarchy.</h3>
+          <p class="fs-6">This will help solve the problem of flooding</p>
+          <span class="fs-6 text-green py-2">
+            <p class="py-1">5min Read</p>
+          </span>
+      </div>
+    </div>
+  </section>
+{% endblock %}

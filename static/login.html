@@ -1,0 +1,26 @@
+{% extends '../../static/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+                    <h2 class="title">Login</h2>
+                    <form method="POST" novalidate>
+                        {% csrf_token %}
+                        <div class="input-group input--style-3" >
+                            {{ login_form|crispy }}
+                        </div>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Login</button>
+                        </div>
+
+                    </form>
+                    <br/> <br/>
+                    <p class="text-center text-dark">Don't have an account? <a href="{% url 'main_app:landing' %}"
+                                                                     style="color: green">Sign Up.</a>.</p>
+    <br/> <br/>
+                    <p class="text-center text-dark"><a href="{% url 'password_reset' %}"
+                                                                     style="color: green">Forgot Password?.</a>.</p>
+
+
+{% endblock %}

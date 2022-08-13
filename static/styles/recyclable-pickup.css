@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+  }
+
+a{text-decoration: none;}
+li{
+    list-style: none;
+}
+p{
+    font-size: 1.6rem;
+}
+label{
+    font-size: 16px;
+}
+
+.body-container{
+    max-width: 1000px;
+    padding: 15px;
+    margin: 20px auto;
+}
+.text-center{text-align: center;}
+.text-green{color: #2BA84A;}
+.text-mute{color: #b1adad;}
+
+.py-h{padding: 0.5rem 0;}
+.py-1{padding: 1rem 0;}
+.py-2{padding: 1.5rem 0;}
+.py-3{padding: 2rem 0;}
+
+.p-h{padding: 0.5rem;}
+.p-1{padding: 1rem;}
+.p-2{padding: 2rem;}
+.p-3{padding: 2rem;}
+
+.d-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.fs-1{font-size: 20px;}
+.fs-2{font-size: 16px;}
+.fs-3{font-size: 14px;}
+.fs-4{font-size: 12px;}
+.fs-5{font-size: 10px;}
+.fs-6{font-size: 8px;}
+
+.btn{
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: #fff
+    }
+
+.btn-green{
+    background: #2BA84A;
+}
+
+
+header{
+    height: 70vh;
+    background:linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.4)),url('../assets/several-cars-parked-garbage-truck-transport-garbage-collection_36928-63 1.png')no-repeat center center/cover;
+    color: #fff;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+header p{
+    padding-top: 220px;
+    font-size: 35px;
+}
+.pickup{
+    background: #f0f0f0;
+}
+.pickup-form{
+    justify-content: center;
+    max-width: 900px;
+    margin: auto;
+    
+}
+.pickup-form .form-group label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.pickup-form .form-group input{
+    padding: 15px;
+    width: 70%;
+    border: #2BA84A 1px solid;
+    font-size: 1.5rem;
+}
+.pickup-form .form-group input:focus{
+    outline: #2BA84A 1px solid;
+}
+.pickup-form .form-group textarea{
+    width: 70%;
+    border: #2BA84A 1px solid
+}
+
+
+.pickup-form .for-group label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.pickup-form .for-group input{
+    padding: 15px;
+
+    border: #2BA84A 1px solid;
+}
+.pickup-form .for-group input:focus{
+    outline: #2BA84A 1px solid;
+}
+.pickup-form .form-group select {
+    padding: 15px;
+    width: 70%;
+    border: #2BA84A 1px solid;
+}
+
+.pickup-form .form-group select:focus{
+    outline: #2BA84A 1px solid;
+}
+
+.pickup-form .form-group .select option{
+    padding: 15px;
+    width: 70%;
+    border: #2BA84A 1px solid;
+}
+
+.pickup-form .form-group .select option:focus{
+    outline: #2BA84A 1px solid;
+}
+
+button[type="submit"] {
+    margin: 15px 0 0 15px;
+
+    font-size: 1.6rem;
+
+}

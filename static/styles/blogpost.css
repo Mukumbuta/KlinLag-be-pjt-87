@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+/*!* utility classes *!*/
+/*.container{*/
+/*  max-width: 900px;*/
+/*  margin:20px auto;*/
+/*  padding: 1rem;*/
+/*}*/
+.underline{
+  text-decoration: underline;
+}
+.text-light{
+  color: #fff;
+}
+.text-green{
+  color: #2ba84a;
+}
+
+.text-center{text-align: center;}
+
+.py-1{padding: 1rem 0;}
+.py-2{padding: 1.5rem 0;}
+.py-3{padding: 2rem 0;}
+
+.p-1{padding: 1rem;}
+.p-2{padding: 1.5rem;}
+.p-3{padding: 2rem;}
+
+.fs-4{font-size: 18px;}
+.fs-5{font-size: 15px;}
+.fs-6{font-size: 11px;}
+
+.btn{
+  display: inline-block;
+  padding: 5px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+.green-btn{
+  background: #2ba84a;
+  color: #fff;
+}
+
+.green-fade{
+  background: #b5ebc2;
+  color: #333;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+
+/* showcase */
+.showcase{
+  background: linear-gradient(rgba(0,0,0,0.5),
+  rgba(0,0,0,0.4)), url('../assets/hero-2.png')no-repeat center center/cover;
+  height: 60vh;
+}
+.showcase-content{
+  width: 550px;
+  margin: 8.5rem 0 0 3rem ;
+}
+
+.showcase-content h1{
+  font-size: 3rem;
+}
+.showcase-content p{
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.showcase-content a{
+  font-size: 12px;
+}
+
+#posts{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1.7rem;
+}
+.posts{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.post{
+  width: 300px;
+}
+.post img{
+  width: 300px;
+}
+.post span{
+  display: flex;
+  justify-content: space-between;
+}
+
+.related-topics{
+  margin-top: 6rem;
+}
+.related-topics a{
+  margin: 3px;
+  font-size: 14px;
+}
+.others{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.article{
+  width: 190px;
+}
+.article img{
+ width: 180px;
+}
+
+@media (max-width: 850px) {
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+@media (max-width: 850px) {
+    .others{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+@media (max-width: 850px) {
+    .posts{
+      display: flex;
+      flex-direction: column;
+    }
+  }

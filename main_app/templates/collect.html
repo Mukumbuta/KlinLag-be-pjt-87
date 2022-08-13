@@ -1,0 +1,99 @@
+{% extends 'baseauth.html' %}
+{% block title %}
+<link rel="stylesheet" href="../../static/styles/collect.css">
+    <link rel="stylesheet" href="../../static/styles/navbarfooter.css">
+<title>Klin Lag | Collect</title>
+{% endblock %}
+{% block body %}
+        <img src="../../static/assets/pile.png" class="hero" alt="hero-image">
+
+<div class="collect hian">
+<h3>HOW IT WORKS</h3>
+<div class="work">
+<div class="work-item"><img src="../../static/assets/select-recycl.PNG" alt="select"><caption><h6>Select Recyclables</h6>Find and select recyclable items you’d love to to have delivered to you</caption></div>
+<div class="work-item"><img src="../../static/assets/payment.PNG" alt="payment"><caption><h6>Make Payments</h6>Confirm your order and select your preferred payment method</caption></div>
+<div class="work-item"><img src="../../static/assets/receive-recyc.PNG" alt="receive"><caption><h6>Receive Recyclables</h6>Sit back, relax and have us deliver your ordered recyclable items to you just the way you want it </caption></div>
+</div>
+
+<h3>FEATURED</h3>
+<div class="feature">
+
+<a href="{% url 'main_app:recycle-delivery' %}"><figure class="feature-item" ><img src="../../static/assets/featured1.png" alt="carton" ><figcaption>1 Bag of Plastic Recyclables (150kg)</figcaption></figure></a>
+<a href="{% url 'main_app:recycle-delivery' %}"><figure class="feature-item" ><img src="../../static/assets/featured2.png" alt="carton" ><figcaption>15 Medium Size Cartons (50kg)</figcaption></figure></a>
+<a href="{% url 'main_app:recycle-delivery' %}"><figure class="feature-item" ><img src="../../static/assets/featured3.png" alt="carton" ><figcaption>3 Bundles of  Papers/Cartons (60kg)</figcaption></figure></a>
+
+</div>
+
+<h3>CATEGORIES OF AVAILABLE RECYCLABLES</h3>
+<div class="container">
+<section class="collect_container">
+    <div class="recyclable">
+      <div class="text"> <h3>PLASTIC</h3>
+        <p>Plates, Bags, Toys, Buckets, Bowls, Containers,Cutleries, Cups, Footwears, Sachets.</p></div>
+      <div> <img src="../../static/assets/plastic.png" class="recycl-img"></div>
+
+           </div>
+      <div class="recyclable">
+      <div class="text"> <h3>GLASSES</h3>
+        <p>Bottles, Plates, Bags, Toys, Buckets, Bowls,Cutleries, Cups, Footwears ...</p></div>
+      <div> <img src="../../static/assets/glasses.png" class="recycl-img"></div>
+
+           </div>
+    </section>
+    <section class="collect_container">
+    <div class="recyclable">
+      <div class="text"> <h3>PAPER AND CARTON</h3>
+        <p>Newspapers, Cartons, Old books, Cardboards,Bags, Plates, Cups, Magazines, Paper egg crates.</p></div>
+      <div> <img src="../../static/assets/paper.png" class="recycl-img"></div>
+
+           </div>
+      <div class="recyclable">
+      <div class="text"> <h3>ELECTRONICS</h3>
+        <p>Bottles, Plates, Bags, Toys, Buckets, Bowls,Cutleries, Cups, Footwears ...</p></div>
+      <div> <img src="../../static/assets/electronics.png" class="recycl-img"></div>
+
+           </div>
+    </section>
+    <section class="collect_container">
+    <div class="recyclable">
+      <div class="text"> <h3>TINS AND CANS</h3>
+        <p>Bottles, Plates, Bags, Toys, Buckets, Bowls,Cutleries, Cups, Footwears ...</p></div>
+      <div> <img src="../../static/assets/tin.png" class="recycl-img"></div>
+
+           </div>
+      <div class="recyclable">
+      <div class="text"> <h3>BATTERIES</h3>
+        <p>Bottles, Plates, Bags, Toys, Buckets, Bowl,Cutleries, Cups, Footwears ...</p></div>
+      <div> <img src="../../static/assets/battery.png" class="recycl-img"></div>
+
+           </div>
+    </section>
+</div>
+
+    <div><img src="../../static/assets/more.PNG" alt="more" class="more" ></div>
+
+<h3>WHAT THEY ARE SAYING </h3>
+
+
+<div class="img-left"><figure class="testimonial "><img src="../../static/assets/CEO.png" alt="carton" class="ceo-img"><figcaption class="ceo-caption">Bosun Michael | CEO, Plastechs<p>“Talk about an organization that delivers exactly what they pose in pictures. Superb!”</p></figcaption></figure>
+
+<h3 style=" margin-top: 100px;">Have Any Question in Mind?
+<p>Let Us Help You</p>
+</h3>
+    <div class="sam">
+
+<form class="form">
+    <label > </label>
+    <input type="text" placeholder="Type your question">
+    <button> SUBMIT</button>
+
+
+</form>
+        </div>
+
+    <h3 style=" margin-top: 100px;">Prefer to come to our Pick-Up stations?
+        <p ><a style="color: #2ba84a" href="{% url 'main_app:recycle-location' %}">Check Out our Locations</a></p>
+</h3>
+</div>
+    </div>
+{% endblock %}

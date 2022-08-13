@@ -1,0 +1,19 @@
+{% extends 'baseauth.html' %}
+{% load static %}
+{% block title %}
+
+{#    <link rel="stylesheet" media="all" href={% static "vendor/select2/select2.min.css"%} >#}
+{#    <link rel="stylesheet" media="all" href={% static "vendor/datepicker/daterangepicker.css"%} >#}
+    <link rel="stylesheet" href="../../../static/styles/usersignup.css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" media="all" href={% static "css/main.css"%} >
+    <title>Klin Lag</title>
+
+{% endblock %}
+{% block content %}
+
+<a href="{% url 'calendar' %}?{{ prev_month }}">Previous Month</a><a href="{% url 'calendar' %}?{{ next_month }}">Next Month</a>
+
+{{ calendar }}
+
+{% endblock %}

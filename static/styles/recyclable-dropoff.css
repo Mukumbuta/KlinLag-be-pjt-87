@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+  }
+
+
+
+a{text-decoration: none;}
+
+li{
+    list-style: none;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+header{
+    height: 70vh;
+    background:linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.4)),url('../assets/woman-hand-holding-garbage-bag-recycle-putting-trash_34152-1888 1.png')no-repeat center center/cover;
+    color: #fff;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+header h1{
+    padding-top: 200px;
+    font-weight: bold;
+}
+/* utility class */
+.body-container{
+    max-width: 1000px;
+    padding: 15px;
+    margin: 20px auto;
+}
+.text-center{text-align: center;}
+
+.py-h{padding: 0.5rem 0;}
+.py-1{padding: 1rem 0;}
+.py-2{padding: 1.5rem 0;}
+.py-3{padding: 2rem 0;}
+
+.p-h{padding: 0.5rem;}
+.p-1{padding: 1rem;}
+.p-2{padding: 2rem;}
+.p-3{padding: 2rem;}
+
+.d-flex{
+    display: flex;
+    flex: 1;
+}
+
+.fs-1{font-size: 20px;}
+.fs-2{font-size: 16px;}
+.fs-3{font-size: 14px;}
+.fs-4{font-size: 12px;}
+.fs-5{font-size: 10px;}
+.fs-6{font-size: 8px;}
+
+.text-green{color: #2BA84A;}
+.recycle-info{
+    width: 400px;
+}
+
+.btn{
+border-radius: 8px;
+padding: 8px 15px;
+color: #fff;
+    font-size: 1.6rem;
+}
+
+.btn-green{
+    background: #2BA84A;
+}
+.btn-yellow{
+    background: #FFC300;
+}
+.recycle-info h2{
+margin-bottom: 80px;
+    font-weight: bold;
+}
+.recycle-img{
+    width: 480px;
+    margin: auto;
+}
+
+#centers{
+    background: #FDF4DB;
+}
+
+.center{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.box{
+    width: 350px;
+}
+.box > div h3{
+    color: #8E9191;
+    font-weight: bold;
+}
+.box > div img{
+    float: left;
+    width: 20px;
+    margin-right: 10px;
+}
+
+h4{
+    font-weight: bold;
+}
+

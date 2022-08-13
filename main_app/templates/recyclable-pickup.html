@@ -1,0 +1,87 @@
+{% extends 'baseauth.html' %}
+{% load widget_tweaks %}
+{% block title %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <!-- Fonts -->
+
+    <link rel="stylesheet" href="../../static/styles/usersignup.css">
+    <link rel="stylesheet" href="../../static/styles/recyclable-pickup.css">
+    <title>Pick Up</title>
+{% endblock %}
+{% block body %}
+    <header>
+        <p>Pick-Up Services</p>
+    </header>
+<section class="body-container py-3">
+    <div class="py-2">
+        <h2>Request Pickup</h2>
+        <p>Home / Pickup</p>
+    </div>
+    <div class="pickup p-2">
+        <h3 class="py-3">Pickup Details</h3>
+        <form class="pickup-form d-grid" method="post" novalidate>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                {{ request_form.full_name.errors }}
+{#                <input type="text" name="name" id="fullname" placeholder="John Doe">#}
+                {% render_field request_form.full_name  type="text" name="name" id="fullname" placeholder="John Doe"%}
+            </div>
+            <div class="form-group">
+                <label for="mail">Email Address</label>
+                {{ request_form.email.errors }}
+{#                <input type="email" name="mail" id="mail" placeholder="johndoe@example.com">#}
+                {% render_field request_form.email type="email" name="mail" id="mail" placeholder="johndoe@example.com"%}
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                {{ request_form.phone.errors }}
+{#                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="+234">#}
+                {% render_field request_form.phone type="text" name="phoneNumber" id="phoneNumber" placeholder="+234"%}
+            </div>
+            <div class="form-group">
+                <label for="pickup-address">Pickup Address</label>
+                {{ request_form.address.errors }}
+{#                <input type="text" name="pickup-address" id="pickup-address" placeholder="Ajah, Lagos, Nigeria">#}
+                {% render_field request_form.address  type="text" name="pickup-address" id="pickup-address" placeholder="Ajah, Lagos, Nigeria"%}
+            </div>
+            <div class="form-group">
+                <label for="pickupDate">Pickup Date</label>
+                {{ request_form.date.errors }}
+{#                <input type="date" name="pickupDate" id="pickupDate" placeholder="DD.MM.YY">#}
+                {% render_field request_form.date type="date" name="pickupDate" id="pickupDate" placeholder="DD.MM.YY" %}
+            </div>
+            <div class="form-group">
+                <label for="pickupTime">Pickup Time</label>
+                {{ request_form.time.errors }}
+{#                <select type="text" name="pickupTime" id="pickupTime" placeholder="Between 10:00am - 11:00am"></select>#}
+                {% render_field request_form.time  type="text" name="pickupTime" id="pickupTime" %}
+            </div>
+            <div class="for-group">
+                <label for="wasteType">Waste Type</label>
+                {{ request_form.waste_type.errors }}
+{#                <input type="checkbox" name="wasteType" id="wasteType" placeholder="Plastic">#}
+                {% render_field request_form.waste_type  type="checkbox" name="wasteType" id="wasteType" placeholder="Plastic"%}
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                {{ request_form.quantity.errors }}
+{#                <input type="number" name="quantity" id="quantity" placeholder="E.g 1">#}
+                {% render_field request_form.quantity  type="number" name="quantity" id="quantity" placeholder="E.g 1" %}
+            </div>
+            <div class="form-group">
+                <label for="extraNote">An Extra Note <span class="fs-5 text-mute">Anything you'd like us to know</span></label>
+                {{ request_form.extra_note.errors }}
+{#                <textarea name="extraNote" id="extraNote" cols="30" rows="10"></textarea>#}
+                {% render_field request_form.extra_note name="extraNote" id="extraNote" cols="30" rows="10" %}
+            </div>
+          <div>
+            <button type="submit" class="btn btn-green">SCHEDULE PICKUP</button>
+              </div>
+
+        </form>
+
+
+    <p class="text-center py-3">Prefer to drop it off by yourself? , find out where our DROP-OFF CENTRES are located. <a href="{% url 'main_app:recycle-dropoff' %}" class="text-green">TRY IT OUT</a></p>
+    </div></section>
+{% endblock %}

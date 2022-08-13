@@ -1,0 +1,108 @@
+{% extends 'baseauth.html' %}
+{% load widget_tweaks %}
+  <!-- custom styles -->
+    {% block title %}
+  <link rel="stylesheet" href="../../static/styles/companysignup.css">
+  <title>Klin Lag | Sign Up - Company</title>
+{% endblock %}
+
+  {% block body %}
+  <section class="sign-up py-7">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 d-none d-lg-block"></div>
+
+        <div class="col-lg-6  col-md-6 col-sm-12 px-7">
+          <h1 class="heading-primary pt-7">Getting Started</h1>
+          <form class="sign-up__form mb-3" method="POST" novalidate >
+              {% csrf_token %}
+                {{ signup_agency_form.non_field_errors }}
+            <div class="mb-3">
+              <label for="company-name" class="form-label">Company Name</label>
+                {{ signup_agency_form.first_name.errors }}
+{#              <input type="text" class="form-control shadow-none" id="company-name" placeholder="Company Name">#}
+                {% render_field signup_agency_form.first_name type="text" class="form-control shadow-none" id="company-name" placeholder="Company Name" %}
+
+            </div>
+              {% csrf_token %}
+            <div class="mb-3">
+              <label for="company-email" class="form-label">Company Email</label>
+                {{ signup_agency_form.email.errors }}
+{#              <input type="email" class="form-control shadow-none" id="company-email" placeholder="john@example.com">#}
+                {% render_field signup_agency_form.email  type="email" class="form-control shadow-none" id="company-email" placeholder="john@example.com" %}
+            </div>
+              {% csrf_token %}
+            <div class="mb-3">
+              <label for="contact" class="form-label">Contact</label>
+                {{ signup_agency_form.phone.errors }}
+{#              <input type="text" class="form-control shadow-none" id="contact" placeholder="Contact">#}
+                {% render_field signup_agency_form.phone  type="text" class="form-control shadow-none" id="contact" placeholder="Contact"%}
+            </div>
+            {% csrf_token %}
+            <div class="row mb-3">
+              <div class="col col-xs-12">
+                <label for="password" class="form-label">Password</label>
+                  {{ signup_agency_form.password1.errors }}
+                <div class="input-group">
+
+{#                  <input type="password" id="password" class="form-control shadow-none" aria-label="Password">#}
+                    {% render_field signup_agency_form.password1  type="password" id="password" class="form-control shadow-none" aria-label="Password"%}
+                  <span class="input-group-text"><img src="../../static/assets/eye.svg" alt="hide"></span>
+                </div>
+              </div>
+                {% csrf_token %}
+              <div class="col-xs-12">
+                <label for="confirm" class="form-label">Confirm Password</label>
+                  {{ signup_agency_form.password2.errors }}
+                <div class="input-group">
+
+{#                  <input type="password" id="confirm" class="form-control shadow-none" aria-label="Confirm Password">#}
+                  {% render_field signup_agency_form.password2  type="password" id="confirm" class="form-control shadow-none" aria-label="Confirm Password"%}
+                    <span class="input-group-text"><img src="../../static/assets/eye.svg" alt="hide"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-12">
+                  {{ signup_agency_form.confirmation.errors}}
+                <div class="form-check d-flex align-items-center">
+{#                  <input class="form-check-input" type="checkbox" id="gridCheck">#}
+                    {% render_field signup_agency_form.confirmation  class="form-check-input" type="checkbox" id="gridCheck"%}
+                  <label class="form-check-label" for="agreement">
+                    I agree to KLIN LAG’s <span class="text-primary">Terms &amp; Condition</span> and <span class="text-primary">Privacy Policy</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-lg px-5">Sign Up</button>
+              </div>
+            </div>
+
+          </form>
+
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-4">
+              <h4>Already have an account?</h4>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-8">
+              <a href="{% url 'main_app:index' %}"><button type="button" class="btn btn-alt btn-lg px-5">Sign In</button></a>
+            </div>
+          </div>
+         </div> <!-- end col-4 -->
+
+
+
+        <div class="col-lg-3 col-md-3 col-sm-12 d-none d-lg-block"></div>
+      </div>
+    </div>
+  </section>
+
+
+  {% endblock %}
+  <!-- footer  -->
+

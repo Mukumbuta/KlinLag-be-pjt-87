@@ -1,0 +1,504 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+/***********************************
+* UTILITIES
+************************************/
+.text-white {
+  color: #fff;
+}
+.mt-10 {
+  margin-top: 10rem;
+}
+.mt-3 {
+  margin-top: 3rem !important;
+}
+.mb-10 {
+  margin-bottom: 10rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem !important;
+}
+.mr-2 {
+  margin-right: 2rem !important;
+}
+.pl-25 {
+  padding-left: 25rem;
+}
+.py-30 {
+  padding-top: 15rem;
+  padding-bottom: 30rem;
+}
+.py-20 {
+  padding-top: 20rem;
+  padding-bottom: 20rem;
+}
+
+.py-7 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+.px-7 {
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+.pt-20 {
+  padding-top: 20rem;
+}
+.pt-7 {
+  padding-top: 7rem;
+}
+
+.btn-yellow {
+  background: #efbd09;
+  border-radius: 10px;
+  color: #fff;
+  width: 377px;
+  height: 56px;
+  padding: 5px 10px;
+  margin: 20px auto;
+}
+.btn-bleu {
+  background: #76a9df;
+  border-radius: 10px;
+  color: #fff;
+  width: 377px;
+  height: 56px;
+  padding: 5px 10px;
+  margin: 10px auto;
+}
+
+.text-nunito {
+  font-family: Nunito, sans-serif;
+}
+/***********************************
+* TYPOGRAPHY
+************************************/
+body {
+  font-family: Nunito, sans-serif;
+}
+
+.heading-primary {
+  /* font-family: 'Nunito', sans-serif; */
+  font-weight: 900;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 140%;
+}
+
+.heading-secondary {
+  /* font-family: 'Nunito', sans-serif; */
+  font-weight: 900;
+  font-size: 4rem;
+  color: #000;
+}
+
+.heading-tertiary,
+.heading-download {
+  font-weight: 800;
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  color: #000;
+}
+
+.heading-tertiary {
+  text-transform: uppercase;
+}
+.heading-download {
+  text-transform: capitalize;
+}
+
+.heading-text {
+  font-family: Nunito, sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+/***********************************
+* HEADER
+************************************/
+.header {
+  background-image: url('../assets/hero-bg3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+/***********************************
+* NAVBAR
+************************************/
+.header__navigation {
+  font-size: 1.6rem;
+}
+.navbar {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.navbar-nav.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav.main-nav li {
+  position: relative;
+}
+.navbar-link {
+  color: #fff !important;
+}
+
+.navbar-nav.main-nav a {
+  padding-right: 0.8rem !important;
+  padding-left: 0.8rem !important;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/***********************************
+* HERO
+************************************/
+.header__hero {
+  position: relative;
+}
+
+/***********************************
+* WHO WE ARE
+************************************/
+.who-we-are {
+  background-color: #fdf4db;
+}
+
+/***********************************
+* PARTNERS
+************************************/
+
+.partners-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.partners-logo:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+/***********************************
+* BUTTON
+************************************/
+.btn {
+  font-family: Nunito, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+.btn-primary,
+.btn-subscribe,
+.btn-alt {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+}
+
+.btn-primary {
+  background: #2ba84a;
+  border-color: #2ba84a;
+}
+
+.btn-alt {
+  background: #fff;
+  color: #2ba84a;
+  border-color: #2ba84a;
+}
+.btn-subscribe {
+  background: #ffc300;
+  border-color: #ffc300;
+}
+.btn-primary:hover {
+  background: #fff;
+  color: #2ba84a;
+  border-color: #2ba84a;
+}
+
+.mdi-36px {
+  font-size: 3.9rem;
+  margin-right: 10px;
+}
+
+/***********************************
+* ICON BOX
+************************************/
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 2rem;
+}
+.icon-box__icon {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background-color: #2ba84a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-box__title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 3rem 0;
+}
+
+.icon-box__content {
+  /* background-color: rgba(196, 196, 196, 0.3); */
+  background-color: rgba(237, 237, 237, 1);
+  padding: 6rem 4.5rem;
+  box-shadow: 1px 2px 24px -1px rgba(0, 0, 0, 0.25);
+}
+
+.icon-box__text {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+/***********************************
+*IMAGE BOX
+************************************/
+.image-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-box__image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.image-box__title {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.what-goes-where {
+  /* background-color: rgba(196, 196, 196, 0.3); */
+  background-color: #fdf4db;
+}
+
+.bg-primary {
+  background-color: #2ba84a !important;
+}
+
+/***********************************
+* FOOTER
+************************************/
+.footer {
+  background-color: #2ba84a;
+  border-top: 1.6rem solid #9cc7a6;
+}
+
+.newsletter {
+  margin-top: 2rem;
+}
+.newsletter-title {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+}
+
+.footer input {
+  border-radius: 1.2rem;
+  padding: 1.8rem 0.8rem;
+  margin-right: 1rem;
+  font-size: 1.6rem;
+}
+
+.footer .nav-link {
+  font-size: 1.6rem;
+}
+
+.heading-footer,
+.connect {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.connect {
+  width: 100%;
+  text-align: center;
+  border-bottom: 0.1rem solid #fff;
+  line-height: 0.1em;
+  margin: 1rem 0 2rem;
+}
+
+.connect span {
+  background: #2ba84a;
+  padding: 0 1rem;
+}
+
+.border {
+  border-top: 0.1rem solid #fff;
+}
+
+.footer-nav a {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.footer-nav-secondary a {
+  color: #828282;
+}
+
+@media screen and (max-width: 76.8rem) {
+  .pl-25 {
+    padding-left: 3rem;
+  }
+  .px-7 {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  .py-20 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+  .py-30 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .navbar-nav.main-nav a {
+    color: #000 !important;
+  }
+  .heading-secondary {
+    font-size: 3rem;
+  }
+  .header {
+    background-image: none;
+    min-height: auto;
+  }
+  .partners-img {
+    overflow-x: scroll;
+  }
+  .icon-box {
+    margin-bottom: 3rem;
+  }
+  .who-we-are img {
+    width: 90%;
+  }
+  .icon-box__icon {
+    width: 80px;
+    height: 80px;
+  }
+  .download button {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn-yellow,
+  .btn-bleu {
+    width: 280px;
+    height: 56px;
+    padding: 5px 20px;
+    margin: 15px auto;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 36.5rem) {
+  .pl-25 {
+    padding-left: 5rem;
+  }
+  .py-30 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .py-20 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .header {
+    background-image: none;
+    min-height: auto;
+  }
+  .navbar-nav.main-nav a {
+    color: #000 !important;
+  }
+  .partners-img {
+    flex-direction: column;
+    align-items: center;
+  }
+  .partners-logo {
+    width: 50%;
+    margin-right: 0 !important;
+    margin-bottom: 1.5rem;
+  }
+  .who-we-are .row {
+    flex-direction: column;
+  }
+  .who-we-are img {
+    width: 100%;
+    height: auto;
+  }
+  .heading-primary {
+    font-size: 3rem;
+  }
+  .heading-tertiary {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .heading-secondary {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .btn-primary {
+    display: block;
+  }
+  .group-btn .btn {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .download button {
+    margin-bottom: 1rem;
+  }
+  .mr-2 {
+    margin-right: 0 !important;
+  }
+  .icon-box {
+    margin-bottom: 3rem;
+  }
+
+  .icon-box__icon {
+    width: 80px;
+    height: 80px;
+  }
+  .icon-box__title {
+    font-size: 1.4rem;
+  }
+  .icons-col {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .icons-col .row:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+
+  .heading-footer {
+    margin-top: 2rem;
+  }
+}

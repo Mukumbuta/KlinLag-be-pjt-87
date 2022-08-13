@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&display=swap"
+    rel="stylesheet">
+  <!-- custom styles -->
+  <link rel="stylesheet" href="../../static/styles/modal.css">
+  <link rel="stylesheet" href="../../static/styles/homepage.css">
+  <title>Klin Lag | Home</title>
+</head>
+
+<body>
+{% include 'messages.html' %}
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light header__navigation">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="../../static/assets/logo.svg" alt="klinglag logo" width="100">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav main-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'main_app:index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'main_app:about' %}">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'main_app:blog' %}">Blog</a>
+            </li>
+
+      {% if user.is_authenticated %}
+                {% if user.is_giver %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:home' %}">Dashboard</a>
+          </li>
+                    {% elif user.is_collector %}
+                    <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:collect' %}">Dashboard</a>
+          </li>
+                    {% endif %}
+                <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:logout' %}">Logout</a>
+          </li>
+            {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="header__hero">
+      <div class="container">
+        <div class="row d-flex py-30 align-content-center">
+          <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="heading-primary">re-use the <span style="color: #2BA84A;
+              ">refuse</span></h1>
+            <p class="heading-text mb-3">All for the love of a cleaner
+                Lagos and a better environment,
+                let’s put the recyclable trash to
+                good use. Become an active trash
+                depositor and stand a chance to
+                get a reward or maybe you just want
+                those recyclable trash for your
+                business... WE’VE GOT YOU COVERED.
+
+            </p>
+              {% if not user.is_authenticated %}
+            <div class="group-btn">
+              <a href="#" class="btn btn-primary mr-2 getstarted">Get Started</a>
+              <a href="#" class="btn btn-alt signin-btn">Sign In</a>
+            </div>
+              {% endif %}
+          </div>
+          <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </header>
+
+  <section class="who-we-are py-7">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <img src="../../static/assets/image%201.svg" alt="" class="img">
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <h3 class="heading-tertiary">Who we are</h3>
+          <h2 class="heading-secondary">Yes, we believe in a cleaner and healthy LAGOS!
+
+          </h2>
+          <p class="heading-text mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et mauris libero
+            suspendisse in urna, fusce imperdiet aliquet. Tellus, mollis commodo turpis netus ultrices ut. Senectus in a
+            vestibulum aliquet amet ornare tellus egestas. Condimentum sodales a faucibus eu enim.</p>
+
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works py-7">
+    <div class="container">
+      <div class="row mb-10">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <h3 class="heading-tertiary">How it works</h3>
+          <h2 class="heading-secondary">Make some cash from recycling that trash - Learn how it works
+          </h2>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12"></div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+          <div class="icon-box">
+            <div class="icon-box__icon">
+              <img src="../../static/assets/pickup.png" alt="pickup" class="icon">
+            </div>
+            <h1 class="icon-box__title">Pick-up</h1>
+            <div class="icon-box__content">
+              <p class="icon-box__text">Relax and have us come do all the work. Schedule a pickup today and we'd be glad to head right up</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+          <div class="icon-box">
+            <div class="icon-box__icon">
+              <img src="../../static/assets/bounty.png" alt="pickup" class="icon">
+            </div>
+            <h1 class="icon-box__title">Drop-off</h1>
+            <div class="icon-box__content">
+              <p class="icon-box__text"> Find a dropoff center around you and deliver your recyclable waste locally</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+          <div class="icon-box">
+            <div class="icon-box__icon">
+              <img src="../../static/assets/database.png" alt="pickup" class="icon">
+            </div>
+            <h1 class="icon-box__title">Earn-points</h1>
+            <div class="icon-box__content">
+              <p class="icon-box__text">Earn KLIN points everytime you donate trash</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+          <div class="icon-box">
+            <div class="icon-box__icon">
+              <img src="../../static/assets/cash.png" alt="pickup" class="icon">
+            </div>
+            <h1 class="icon-box__title">Cash Redemption</h1>
+            <div class="icon-box__content">
+              <p class="icon-box__text">Get up to 100 KLIN points within 2 months and have your points converted to a
+                  cash or gift price, ready for redemption </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="what-goes-where">
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-sm-12 col-xs-12 d-flex flex-column justify-content-evenly icons-col">
+        <div class="row">
+          <div class="col-lg-3 col-md-12 col-sm-12 d-none d-lg-block">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="image-box">
+                <div class="image-box__image">
+                  <img src="../../static/assets/glass%20bottles.svg" alt="glass bottles" class="image">
+                </div>
+                <h1 class="image-box__title">Bottles</h1>
+              </div>
+              <div class="image-box">
+                <div class="image-box__image">
+                  <img src="../../static/assets/plastic.svg" alt="glass bottles" class="image">
+                </div>
+                <h1 class="image-box__title">Plastic</h1>
+              </div>
+              <div class="image-box">
+                <div class="image-box__image">
+                  <img src="../../static/assets/carton.svg" alt="cartons" class="image">
+                </div>
+                <h1 class="image-box__title">Cartons</h1>
+              </div>
+              <div class="image-box">
+                <div class="image-box__image">
+                  <img src="../../static/assets/Document-files.svg" alt="glass bottles" class="image">
+                </div>
+                <h1 class="image-box__title">Papers</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12 d-none d-lg-block">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-12 col-sm-12 d-none d-lg-block">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="image-box">
+                <div class="image-box__image">
+                  <img src="../../static/assets/plastic-bottles.svg" alt="glass bottles" class="image">
+                </div>
+                <h1 class="image-box__title">Plastic</h1>
+              </div>
+              <div class="image-box">
+                <div class="image-box__image">
+                  <img src="../../static/assets/battery.svg" alt="glass bottles" class="image">
+                </div>
+                <h1 class="image-box__title">Batteries</h1>
+              </div>
+              <div class="image-box">
+                <div class="image-box__image">
+                  <img src="../../static/assets/cans.svg" alt="cartons" class="image">
+                </div>
+                <h1 class="image-box__title">Cans</h1>
+              </div>
+              <div class="image-box">
+                <div class="icon-box__icon">
+                  <h1 class="text-white">more &raquo;</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12 d-none d-lg-block">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="py-20 px-7 text-center bg-primary">
+          <h2 class="heading-secondary text-white">
+            Confused about how to sort or
+            what is recyclable?
+          </h2>
+          <p class="heading-text text-white pt-7">Find out what goes where</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<section class="download py-7">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-6 col-sm-12 pull-right">
+          <div class="row d-flex justify-content-center align-items-center pl-25">
+              <p class="heading-text">Recycle made easy</p>
+              <h3 class="heading-download">Download our Mobile App</h3>
+              <div class="mt-2">
+              <button class="btn btn-primary btn-icon-text mr-2">
+                <i class="fa fa-android btn-icon-prepend mdi-36px"></i>
+                    <span class="d-inline-block text-left">
+                        <small class="font-weight-light d-block">GET IT ON</small> google play </span>
+              </button>
+              <button class="btn btn-alt btn-icon-text">
+                  <i class="fa fa-apple btn-icon-prepend mdi-36px"></i>
+                  <span class="d-inline-block text-left">
+                      <small class="font-weight-light d-block">GET IN ON</small> APP STORE
+                  </span>
+              </button>
+          </div>
+        </div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12">
+          <img src="../../static/assets/app.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners py-7">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <h3 class="heading-tertiary text-center">Partners</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="partners-img">
+            <img src="../../static/assets/regroup.svg" alt="regroup" class="partners-logo">
+            <img src="../../static/assets/nrc.svg" alt="nrc" class="partners-logo">
+            <img src="../../static/assets/green-planet.svg" alt="green planet" class="partners-logo">
+            <img src="../../static/assets/platship.svg" alt="platship" class="partners-logo">
+            <img src="../../static/assets/lawma.svg" alt="lawma" class="partners-logo">
+            <img src="../../static/assets/pampers.svg" alt="pampers" class="partners-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer  -->
+
+  <footer class="footer py-7 mt-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+          <img src="../../static/assets/logo-white.svg" alt="footer logo" width="160" class="footer-logo">
+          <div class="newsletter">
+            <p class="newsletter-title">subscribe to our newsletter</p>
+            <form class="d-flex align-items-center">
+              <input type="email" class="form-control" placeholder="enter your email address">
+              <button type="submit" class="btn btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12">
+          <h3 class="heading-footer text-white">About Us</h3>
+          <nav class="nav flex-column footer-nav">
+            <a class="nav-link" href="#">Who we are</a>
+            <a class="nav-link" href="#">Our Mission</a>
+            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="#">Partners</a>
+          </nav>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12">
+          <h3 class="heading-footer text-white">Resources</h3>
+          <nav class="nav flex-column footer-nav">
+            <a class="nav-link" href="#">Careers</a>
+            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="#">Volunteers</a>
+            <a class="nav-link" href="#">FAQs</a>
+          </nav>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <h3 class="heading-footer text-white">Contact Us</h3>
+          <nav class="nav flex-column footer-nav">
+            <div class="d-flex align-items-center mb-2 text-white">
+              <i class="fa fa-home fa-3x"></i>
+              <a class="nav-link" href="#">8 Jubliee-CMD Road, Magodo, Lagos State</a>
+            </div>
+            <div class="d-flex align-items-center mb-2 text-white">
+              <i class="fa fa-phone fa-3x"></i>
+              <a class="nav-link" href="#">+2349000099900</a>
+            </div>
+            <div class="d-flex align-items-center mb-2 text-white">
+              <i class="fa fa-envelope fa-3x"></i>
+              <a class="nav-link" href="#">hello@klinlag.ng</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col">
+          <h4 class="connect text-center text-white"><span>Connect with us</span></h4>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <ul class="nav footer-nav-left">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Terms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Privacy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <ul class="nav footer-nav-secondary justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-facebook fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-twitter fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-instagram fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-whatsapp fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="signup-modal text-nunito">
+    <div class="signup-content bg-body">
+      <button type="button" class="btn-close"></button>
+        <h3 class="text-center p-2">Sign Up</h3>
+        <div>
+          <a href="{% url 'main_app:signup_user' %}" class="btn btn-yellow d-block fs-2 text-nunito">I WANT TO DONATE RECYCLABLES</a>
+          <a href="{% url 'main_app:signup_agency' %}" class="btn btn-bleu d-block fs-2 text-nunito">I WANT TO RECEIVE RECYCLABLES</a>
+        </div>
+    </div>
+  </div>
+  <div class="signin-modal text-nunito">
+    <div class="signin-content bg-body">
+      <button type="button" class="btn-close close-signin"></button>
+        <h3 class="text-center p-2">Sign In</h3>
+        <div>
+          <a href="{% url 'main_app:login-user' %}" class="btn btn-yellow d-block text-center fs-2 text-nunito">SIGN IN AS A DONOR</a>
+          <a href="{% url 'main_app:login_agency' %}" class="btn btn-bleu d-block fs-2 text-nunito">SIGN IN AS A COLLECTOR</a>
+        </div>
+    </div>
+  </div>
+ 
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+{#    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>#}
+    <script src="../../static/js/modal.js"></script>
+</body>
+
+</html>

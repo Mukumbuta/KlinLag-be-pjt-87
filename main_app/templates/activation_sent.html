@@ -1,0 +1,31 @@
+{% extends 'baseauth.html' %}
+{% load static %}
+{% block title %}
+{#    <link rel="stylesheet" media="all" href={% static "vendor/select2/select2.min.css"%} >#}
+{#    <link rel="stylesheet" media="all" href={% static "vendor/datepicker/daterangepicker.css"%} >#}
+    <link rel="stylesheet" href="../../static/styles/usersignup.css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" media="all" href={% static "css/main.css"%} >
+    <title>Klin Lag</title>
+{% endblock %}
+{% block card %}
+    <div class="p-t-180 p-b-100 font-lato">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+{% block body %}
+    {% load crispy_forms_tags %}
+    <h1 class="text-dark">Activation link sent! Please check your Email.</h1>
+    <br /><br />
+              <a
+                class="btn btn-lg btn-warning btn-block text-uppercase"
+                href="{% url 'main_app:index' %}"
+                >Go Back</a
+              >
+{% endblock %}
+                 </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

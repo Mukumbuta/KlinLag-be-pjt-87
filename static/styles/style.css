@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  margin: 0px 10px;
+}
+
+.navbar {
+  background: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.navbar .nav-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  background: #2ba84a;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-weight: lighter;
+  border-top: 15px solid #9cc7a6;
+}
+
+.btm-content {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.btm-logo img{
+  display: block;
+  margin-top: -3.5rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+}
+
+.input-text {
+  font-weight: normal;
+  margin-bottom: 10px;
+} 
+
+.input-area input {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.input-area .btn {
+  padding: 10px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  background: #FFC300;
+  color: #fff;
+}
+
+.input-area .btn:hover {
+  background: #b18907;
+}
+
+.item .text-lead {
+  padding: 0.5rem;
+}
+
+.item .text {
+  padding: 0.5rem 0.8rem;
+}
+
+.contact {
+  margin-top: -58px;
+}
+
+.icons {
+  position: relative;
+}
+
+.icons .fas {
+  font-size: 1.8rem;
+  position: absolute;
+  left: -30px;
+}
+
+.connect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.line {
+  padding: 10px;
+}
+
+.connect-text {
+  padding-top: 10px;
+}
+
+.connect-icons {
+  width: 55%;
+  padding-left: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons-connect a,
+.connect-icons .left a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.icons-connect i {
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar .nav-item {
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.3rem 2rem;
+  }
+
+  .btm-content {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .item {
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  .btm-logo img{
+    display: block;
+    margin: auto;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact {
+    margin-top: 10px;
+  }
+  
+  .line {
+    display: none;
+  }
+
+  .connect-icons {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0%;
+  }
+}

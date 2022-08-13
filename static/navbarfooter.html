@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Styling -->
+    <link href="styles/sign-in.css" rel="stylesheet" >
+  <link rel="stylesheet" href="styles/navbarfooter.css">
+
+    {% block title %}
+    {% endblock %}
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-item">
+      <div class="left">
+        <img src="assets/logo.png" alt="LOGO">
+      </div>
+      <div class="right">
+        <div class="nav-links">
+          <a href="{% url 'main_app:index' %}">HOME</a>
+          <a href="{% url 'main_app:about' %}">ABOUT US</a>
+          <a href="/">HOW IT WORKS</a>
+          <a href="/">CONTACT US</a>
+          <a href="{% url 'main_app:blog'%}">BLOG</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+{% block content %}
+  {% endblock %}
+  <footer class="footer">
+    <div class="btm-content">
+      <div class="item">
+        <div class="btm-logo">
+          <img src="assets/logo-white.png" alt="btm-logo">
+        </div>
+        <div class="input-area">
+          <p class="input-text">SUBSCRIBE TO OUR NEWSLETTER</p>
+          <input type="email" name="email" id="email" placeholder="Enter your email address">
+          <button class="btn">SUBSCRIBE</button>
+        </div>
+      </div>
+      <div class="item">
+        <h4 class="text-lead">ABOUT US</h4>
+        <p class="text">Who we are</p>
+        <p class="text">Our Mission</p>
+        <p class="text">Services</p>
+        <p class="text">Our Projects</p>
+        <p class="text">Partnerships</p>
+      </div>
+      <div class="item">
+        <h4 class="text-lead">RESOURCES</h4>
+        <p class="text">Careers</p>
+        <p class="text">Blogs</p>
+        <p class="text">My Points</p>
+        <p class="text">Gallery</p>
+        <p class="text">FAQs</p>
+      </div>
+      <div class="item">
+        <h4 class="text-lead contact">CONTACT US</h4>
+        <p class="text icons">
+          <i class="fas fa-home">
+          </i>
+          8 Jubliee-CMD Road,<br> 
+          Magodo, Lagos State
+        </p>
+        <p class="text icons">
+          <i class="fas fa-phone-alt"></i>+2349000099900
+        </p>
+        <p class="text icons">
+          <i class="fas fa-envelope"></i>hello@klinlag.ng
+        </p>
+      </div>
+    </div>
+    <div class="connect">
+      <div class="line">
+        <img src="assets/line.png" alt="line">
+      </div>
+      <h4 class="connect-text">CONNECT WITH US</h4>
+      <div class="line">
+        <img src="assets/line.png" alt="line">
+      </div>
+    </div>
+    <div class="connect-icons">
+      <div class="left">
+        <a href="#" class="text">Terms</a>
+        <a href="#" class="text">Privacy</a>
+      </div>
+      <div class="icons-connect">
+        <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+        <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+        <a href="youtube.com"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

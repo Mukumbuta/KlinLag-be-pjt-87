@@ -1,0 +1,42 @@
+{% extends 'baseauth.html' %}
+{% load static %}
+{% block title %}
+{#    <link rel="stylesheet" media="all" href={% static "vendor/select2/select2.min.css"%} >#}
+{#    <link rel="stylesheet" media="all" href={% static "vendor/datepicker/daterangepicker.css"%} >#}
+    <link rel="stylesheet" href="../../static/styles/usersignup.css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" media="all" href={% static "css/main.css"%} >
+    <title>Klin Lag</title>
+{% endblock %}
+{% block card %}
+    <div class="p-t-180 p-b-100 font-lato">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+{% block body %}
+    {% load crispy_forms_tags %}
+    <h2 class="title">Welcome</h2>
+
+
+    {% if user.is_giver %}
+        <a href="{% url 'main_app:my_profile' %}"><button class="btn btn--green">My Profile</button></a>
+    <br/><br/>
+    <a href="{% url 'main_app:recycle-dropoff' %}"><button class="btn btn--green">Recycle DropOff</button></a>
+              <br/><br/>
+    <a href="{% url 'main_app:recycle-pickup' %}"><button class="btn btn--green">Recycle PickUp</button></a>
+    <br/><br/>
+
+        {% elif user.is_collector %}
+        <a href="{% url 'main_app:recycle-location' %}"><button class="btn btn--green">PickUp Locations</button></a>
+              <br/><br/>
+    <a href="{% url 'main_app:recycle-delivery' %}"><button class="btn btn--green">Request Recyclable Delivery</button></a>
+    <br/><br/>
+    {% endif %}
+                    <a href="{% url 'main_app:logout' %}"><button class="btn btn-secondary">Logout</button></a>
+{% endblock %}
+                 </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,219 @@
+
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+  <!-- custom styles -->
+  <link rel="stylesheet" href="../../static/styles/companysignin.css">
+  <title>Klin Lag | Sign In - Agency</title>
+</head>
+
+<body>
+{% include 'messages.html' %}
+  <nav class="navbar navbar-expand-lg navbar-light header__navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../../static/assets/logo.svg" alt="klinglag logo" width="100">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav main-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'main_app:index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:about' %}">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:blog' %}">Blog</a>
+          </li>
+        {% if user.is_authenticated %}
+                {% if user.is_giver %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:home' %}">Dashboard</a>
+          </li>
+                    {% elif user.is_collector %}
+                    <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:collect' %}">Dashboard</a>
+          </li>
+                    {% endif %}
+                <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:logout' %}">Logout</a>
+          </li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  
+  <section class="sign-in py-7">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 d-none d-lg-block"></div>
+
+        <div class="col-lg-6  col-md-12 col-sm-12 px-7">
+          <h1 class="heading-primary pt-7">Welcome Back</h1>
+          <form class="sign-in__form mb-3" action="" method="post" novalidate>
+              {% csrf_token %}
+            <div class="mb-3">
+              <label for="company-email" class="form-label">Company Email</label>
+{#              <input type="email" class="form-control shadow-none" id="company-email" placeholder="john@example.com">#}
+                {% render_field login_form.username type="email" class="form-control shadow-none" id="company-email" placeholder="john@example.com"%}
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+{#                <input type="password" id="password" class="form-control shadow-none" placeholder="Password" aria-label="Password">#}
+                  {% render_field login_form.password type="password" id="password" class="form-control shadow-none" placeholder="Password" aria-label="Password" %}
+                <span class="input-group-text"><img src="../../static/assets/eye.svg" alt="hide"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-12 col-sm-12"></div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <button type="submit" class="btn btn-alt btn-lg px-5">Sign In</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-4">
+              <h4 class="heading-tertiary">Not yet a member?</h4>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-8">
+              <a href="{% url 'main_app:index' %}"><button type="button" class="btn btn-primary btn-lg px-5">Sign Up</button></a>
+            </div>
+          </div>
+         </div> <!-- end col-4 -->
+
+
+
+        <div class="col-lg-3 col-md-3 col-sm-12 d-none d-lg-block"></div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <!-- footer  -->
+
+  <footer class="footer py-7 mt-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+          <img src="../../static/assets/logo-white.svg" alt="footer logo" width="160" class="footer-logo">
+          <div class="newsletter">
+            <p class="newsletter-title">subscribe to our newsletter</p>
+            <form class="d-flex align-items-center">
+              <input type="email" class="form-control" placeholder="enter your email address">
+              <button type="submit" class="btn btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12">
+          <h3 class="heading-footer text-white">About Us</h3>
+          <nav class="nav flex-column footer-nav">
+            <a class="nav-link" href="#">Who we are</a>
+            <a class="nav-link" href="#">Our Mission</a>
+            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="#">Partners</a>
+          </nav>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12">
+          <h3 class="heading-footer text-white">Resources</h3>
+          <nav class="nav flex-column footer-nav">
+            <a class="nav-link" href="#">Careers</a>
+            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="#">Volunteers</a>
+            <a class="nav-link" href="#">FAQs</a>
+          </nav>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <h3 class="heading-footer text-white">Contact Us</h3>
+          <nav class="nav flex-column footer-nav">
+            <div class="d-flex align-items-center mb-2 text-white">
+              <i class="fa fa-home fa-3x"></i>
+              <a class="nav-link" href="#">8 Jubliee-CMD Road, Magodo, Lagos State</a>
+            </div>
+            <div class="d-flex align-items-center mb-2 text-white">
+              <i class="fa fa-phone fa-3x"></i>
+              <a class="nav-link" href="#">+2349000099900</a>
+            </div>
+            <div class="d-flex align-items-center mb-2 text-white">
+              <i class="fa fa-envelope fa-3x"></i>
+              <a class="nav-link" href="#">hello@klinlag.ng</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col">
+          <h4 class="connect text-center text-white"><span>Connect with us</span></h4>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <ul class="nav footer-nav-left">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Terms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Privacy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <ul class="nav footer-nav-secondary justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-facebook fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-twitter fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-instagram fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-whatsapp fa-2x text-white" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
